@@ -27,10 +27,10 @@ tail = "
 #########################################
 
 ## Generate red, blue, green channels 
-#(each binned by 5 to limit size of palette while also covering entire spectrum)
-r = seq(0,255,5 )
-g = seq(0,256,5 )
-b = seq(0,255,5 )
+#(each binned by 3 to commemorate anniversary and also to limit size of palette while also covering entire spectrum)
+r = seq(0,255,3 )
+g = seq(0,256,3 )
+b = seq(0,255,3 )
 
 colors = expand.grid(r,g,b) 
 
@@ -52,7 +52,7 @@ tps <- rbind (head, body, tail) %>%
 
 #Write text file
 connection = file("Preferences.tps")
-writeLines( tps, file("Preferences.tps"))
+writeLines( tps, connection)
 close(connection)
 
 ## REPLACE Preferences file in Tableay Respository with new one
